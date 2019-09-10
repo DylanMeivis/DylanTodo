@@ -10,4 +10,4 @@
 ---
 
 # DylanTodo
-📝 A .NET Core web application to keep track on all of your work
+📝 A .NET Core MVC web application to keep track on all of your work
