@@ -12,7 +12,8 @@ namespace DylanTodo.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var model = new TodoList();
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

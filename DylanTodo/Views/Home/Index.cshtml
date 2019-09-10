@@ -1,8 +1,26 @@
-﻿@{
+﻿@model TodoList
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4 ColorBlue">DylanTodo</h1>
+</div>
+<div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="What is on your mind?" aria-label="DescriptionInput">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon">Remember!</button>
+            </div>
+        </div>
+        <div class="card">
+            <ul class="list-group list-group-flush">
+                @foreach (var item in Model.AllItems)
+                {
+                <li class="list-group-item">@(item.Description) <span class="pl-5"><input type="checkbox"></span></li>             
+                }
+            </ul>
+        </div>
+    </div>
 </div>
