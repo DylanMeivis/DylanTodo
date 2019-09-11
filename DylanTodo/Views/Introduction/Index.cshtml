@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Introduction";
+}
+@model TodoUser
+
+<div class="text-center">
+    <h1 class="display-4 ColorBlue">DylanTodo</h1>
+    <form asp-asp-controller="Introduction" asp-action="SetName" method="post">
+        <input asp-for="UserName"/>
+        <button type="submit">Start Organizing</button>
+    </form> 
+    <a asp-controller="Home" asp-asp-action="Index">Go Home</a>
+</div>
