@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DylanTodo.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace DylanTodo.Controllers
 {
@@ -16,7 +15,6 @@ namespace DylanTodo.Controllers
         {
             if (!HttpContext.Request.Cookies.ContainsKey("userinfo"))
             {
-                HttpContext.Response.Cookies.Append("userinfo", DateTime.Now.ToString());
                 return View();
             }
             else
@@ -24,5 +22,12 @@ namespace DylanTodo.Controllers
                 return RedirectToAction("Index", "Home", new { area = "" });
             }
         }
+        [HttpPost]
+        public IActionResult SetName(TodoUser user)
+        {
+            HttpContext.Response.Cookies.Append("userinfo", user.UserName);
+            return RedirectToAction("Index","Home", new { area = ""});
+        }
+
     }
 }
