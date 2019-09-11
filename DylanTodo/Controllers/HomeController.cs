@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DylanTodo.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace DylanTodo.Controllers
 {
@@ -12,6 +13,10 @@ namespace DylanTodo.Controllers
     {
         public IActionResult Index()
         {
+            if (Request.Cookies["UserInfo"] == null)
+            {
+                return RedirectToAction("Index", "Introduction", new { area = ""});
+            }
             var model = new TodoList();
             return View(model);
         }
