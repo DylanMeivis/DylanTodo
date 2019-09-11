@@ -13,7 +13,7 @@ namespace DylanTodo.Controllers
     {
         public IActionResult Index()
         {
-            if (Request.Cookies["UserInfo"] == null)
+            if (!HttpContext.Request.Cookies.ContainsKey("userinfo"))
             {
                 return RedirectToAction("Index", "Introduction", new { area = ""});
             }
