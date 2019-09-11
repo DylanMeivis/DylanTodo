@@ -17,7 +17,8 @@ namespace DylanTodo.Controllers
             {
                 return RedirectToAction("Index", "Introduction", new { area = ""});
             }
-            var model = new TodoList();
+            var jsonString = HttpContext.Request.Cookies["userinfo"];
+            var model = Newtonsoft.Json.JsonConvert.DeserializeObject<TodoList>(HttpContext.Request.Cookies["userinfo"]);
             return View(model);
         }
 

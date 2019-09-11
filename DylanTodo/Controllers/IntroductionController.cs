@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using DylanTodo.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace DylanTodo.Controllers
 {
@@ -25,7 +26,9 @@ namespace DylanTodo.Controllers
         [HttpPost]
         public IActionResult SetName(TodoUser user)
         {
-            HttpContext.Response.Cookies.Append("userinfo", user.UserName);
+            var todolist = new TodoList(user);
+            var jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(todolist);
+            HttpContext.Response.Cookies.Append("userinfo", jsonString);
             return RedirectToAction("Index","Home", new { area = ""});
         }
 
