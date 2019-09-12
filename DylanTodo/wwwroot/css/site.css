@@ -34,6 +34,54 @@
     transform: scale(1.1);
     transition: 0.5s;
 }
+
+#todoholder {
+    background-color: whitesmoke;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    
+}
+.descriptionholder {
+   font-size: 1.2rem;
+   font-weight: 200;
+}
+.descriptioninput {
+    border: 0;
+    background-color: whitesmoke;
+    color: #465E73;
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+.descriptioninput:focus {
+    border-color: #465E73;
+    box-shadow: none;
+    background-color: whitesmoke;
+}
+.close:focus {
+    box-shadow: none;
+}
+.checkboxbtn {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    display: inline-block;
+    background-color: whitesmoke;
+    border-radius: .25rem;
+    cursor: pointer;
+    margin-top: 0.7rem;
+    border: 0.0625rem solid #465E73;
+    border-radius: 5rem;
+}
+.checkboxbtn:hover {
+    background-color: aquamarine;
+    visibility: visible;
+}
+.topmenu {
+    border-radius: 0 0 2rem 2rem;
+    background: linear-gradient(90deg, rgba(97,172,217,1) 0%, rgba(54,94,188,1) 100%);
+    padding: 3rem;
+    margin-bottom: 2rem;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

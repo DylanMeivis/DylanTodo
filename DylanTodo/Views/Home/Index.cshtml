@@ -1,27 +1,41 @@
-﻿@using Microsoft.AspNetCore.Http;
-@model TodoList
-@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@using Microsoft.AspNetCore.Http; 
+@model TodoList 
+@{ ViewData["Title"] = "HomePage"; }
 
-<div class="text-center">
-    <h1 class="display-4 ColorBlue">@(Model.User.UserName)Todo</h1>
-</div>
-<div class="container pt-5">
-    <div class="row justify-content-center">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="What is on your mind?" aria-label="DescriptionInput">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon">Remember!</button>
-            </div>
-        </div>
-        <div class="card">
-            <ul class="list-group list-group-flush">
-                @foreach (var item in Model.AllItems)
-                {
-                <li class="list-group-item">@(item.Description) <span class="pl-5"><input type="checkbox"></span></li>             
-                }
-            </ul>
-        </div>
+<div class="bg-secondary">
+  <div class="container topmenu">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8 text-center">
+        <h1 class="text-white">Goodmorning @(Model.User.UserName)</h1>
+      </div>
+      <div class="col-2"></div>
     </div>
+  </div>
+  <div class="container bg-secondary">
+    <div id="todoholder" class="container">
+      <div class="row py-3 text-center">
+        <div class="col-2">
+          <button class="checkboxbtn">C</button>
+        </div>
+        <div class="col-8 descriptionholder">
+          <input
+            class="descriptioninput form-control"
+            type="text"
+            value="Get butter"
+          />
+        </div>
+        <div class="col-2">
+          <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            onClick="alert('hi')"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
