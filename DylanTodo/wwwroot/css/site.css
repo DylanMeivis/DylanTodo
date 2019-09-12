@@ -34,7 +34,9 @@
     transform: scale(1.1);
     transition: 0.5s;
 }
-
+#daymessage {
+    font-weight: 300;
+}
 #todoholder {
     background-color: whitesmoke;
     border-radius: 0.625rem;
@@ -74,13 +76,22 @@
 }
 .checkboxbtn:hover {
     background-color: aquamarine;
-    visibility: visible;
+}
+.checkboxbtn:focus {
+    outline: none;
+    box-shadow: none;
 }
 .topmenu {
     border-radius: 0 0 2rem 2rem;
     background: linear-gradient(90deg, rgba(97,172,217,1) 0%, rgba(54,94,188,1) 100%);
     padding: 3rem;
     margin-bottom: 2rem;
+}
+#checksign {
+    visibility: hidden;
+}
+.checkboxbtn:hover #checksign {
+    visibility: visible;
 }
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -104,7 +115,7 @@ button.accept-policy {
 html {
     position: relative;
     min-height: 100%;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -112,6 +123,7 @@ body {
     margin-bottom: 60px;
     /* font-family: poppins; */
     background-color: #eee;
+    font-family: 'Poppins', sans-serif;
 }
 
 .footer {
@@ -123,4 +135,3 @@ body {
     height: 60px;
     line-height: 60px; /* Vertically center the text there */
 }
-
