@@ -1,137 +1,290 @@
-﻿.ColorBlue { color: #465E73; }
-.ColorSkin { color: #F2CDAC; }
-.ColorDarkSkin { color: #F2C299; }
-.ColorLips { color: #F2A88C; }
-.ColorBrown { color: #BF948A; }
-.ColorRed { color: red; }
-
+﻿.ColorBlue {
+  color: #465e73;
+}
+.ColorSkin {
+  color: #f2cdac;
+}
+.ColorDarkSkin {
+  color: #f2c299;
+}
+.ColorLips {
+  color: #f2a88c;
+}
+.ColorBrown {
+  color: #bf948a;
+}
+.ColorRed {
+  color: red;
+}
+#menu {
+    color: white;
+}
+#menu:focus {
+    outline: none;
+    box-shadow: none;
+}
 .inputname {
-    width: 100%;
-    border: 0;
-    border-radius: 2rem;
-    font-size: 1rem;
-    padding: 1rem 2rem;
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
-    color: #465E73;
+  width: 100%;
+  border: 0;
+  border-radius: 2rem;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  color: #465e73;
 }
 .inputname:focus {
-    outline: none;
+  outline: none;
 }
 .namesubmit {
-    width: 50%;
-    border: 0;
-    border-radius: 2rem;
-    font-size: 1rem;
-    padding: 1rem 2rem;
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
-    background-color: #465E73;
-    color: #F2CDAC;
-    transition: 1s;
+  width: 50%;
+  border: 0;
+  border-radius: 2rem;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  background-color: #465e73;
+  color: #f2cdac;
+  transition: 1s;
 }
 .namesubmit:hover {
-    background-color: #F2CDAC;
-    color: #465E73;
-    transform: scale(1.1);
-    transition: 0.5s;
+  background-color: #f2cdac;
+  color: #465e73;
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 #daymessage {
-    font-weight: 300;
+  font-weight: 300;
 }
 #todoholder {
-    background-color: whitesmoke;
-    border-radius: 0.625rem;
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
-    
+  background-color: whitesmoke;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
 }
 .descriptionholder {
-   font-size: 1.2rem;
-   font-weight: 200;
+  font-size: 1.2rem;
+  font-weight: 200;
 }
 .descriptioninput {
-    border: 0;
-    background-color: whitesmoke;
-    color: #465E73;
-    font-size: 1.5rem;
-    font-weight: 200;
+  border: 0;
+  background-color: whitesmoke;
+  color: #465e73;
+  font-size: 1.5rem;
+  font-weight: 200;
 }
 .descriptioninput:focus {
-    border-color: #465E73;
-    box-shadow: none;
-    background-color: whitesmoke;
+  border-color: #465e73;
+  box-shadow: none;
+  background-color: whitesmoke;
 }
 .close:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 .checkboxbtn {
-    width: 2rem;
-    height: 2rem;
-    position: relative;
-    display: inline-block;
-    background-color: whitesmoke;
-    border-radius: .25rem;
-    cursor: pointer;
-    margin-top: 0.7rem;
-    border: 0.0625rem solid #465E73;
-    border-radius: 5rem;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  display: inline-block;
+  background-color: whitesmoke;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-top: 0.7rem;
+  border: 0.0625rem solid #465e73;
+  border-radius: 5rem;
 }
 .checkboxbtn:hover {
-    background-color: aquamarine;
+  background-color: aquamarine;
 }
 .checkboxbtn:focus {
-    outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
 .topmenu {
-    border-radius: 0 0 2rem 2rem;
-    background: linear-gradient(90deg, rgba(97,172,217,1) 0%, rgba(54,94,188,1) 100%);
-    padding: 3rem;
-    margin-bottom: 2rem;
+  border-radius: 0 0 2rem 2rem;
+  background: linear-gradient(
+    90deg,
+    rgba(97, 172, 217, 1) 0%,
+    rgba(54, 94, 188, 1) 100%
+  );
+  padding: 3rem;
+  margin-bottom: 2rem;
 }
 #checksign {
-    visibility: hidden;
+  visibility: hidden;
 }
 .checkboxbtn:hover #checksign {
-    visibility: visible;
+  visibility: visible;
 }
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 @media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
+  html {
+    font-size: 16px;
+  }
 }
 
 button.accept-policy {
-    font-size: 1rem;
-    line-height: inherit;
+  font-size: 1rem;
+  line-height: inherit;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-    position: relative;
-    min-height: 100%;
-    font-family: 'Poppins', sans-serif;
+  position: relative;
+  min-height: 100%;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-    /* font-family: poppins; */
-    background-color: #eee;
-    font-family: 'Poppins', sans-serif;
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  /* font-family: poppins; */
+  background-color: #eee;
+  font-family: "Poppins", sans-serif;
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    white-space: nowrap;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    line-height: 60px; /* Vertically center the text there */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/* Hamburger menu */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #000;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+}
+.hamburger--collapse .hamburger-inner {
+  top: auto;
+  bottom: 0;
+  transition-duration: 0.13s;
+  transition-delay: 0.13s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--collapse .hamburger-inner::after {
+  top: -20px;
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    opacity 0.1s linear;
+}
+.hamburger--collapse .hamburger-inner::before {
+  transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse.is-active .hamburger-inner {
+  transform: translate3d(0, -10px, 0) rotate(-45deg);
+  transition-delay: 0.22s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--collapse.is-active .hamburger-inner::after {
+  top: 0;
+  opacity: 0;
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    opacity 0.1s 0.22s linear;
+}
+.hamburger--collapse.is-active .hamburger-inner::before {
+  top: 0;
+  transform: rotate(-90deg);
+  transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--collapse-r .hamburger-inner {
+  top: auto;
+  bottom: 0;
+  transition-duration: 0.13s;
+  transition-delay: 0.13s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--collapse-r .hamburger-inner::after {
+  top: -20px;
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    opacity 0.1s linear;
+}
+.hamburger--collapse-r .hamburger-inner::before {
+  transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse-r.is-active .hamburger-inner {
+  transform: translate3d(0, -10px, 0) rotate(45deg);
+  transition-delay: 0.22s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--collapse-r.is-active .hamburger-inner::after {
+  top: 0;
+  opacity: 0;
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    opacity 0.1s 0.22s linear;
+}
+.hamburger--collapse-r.is-active .hamburger-inner::before {
+  top: 0;
+  transform: rotate(90deg);
+  transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
