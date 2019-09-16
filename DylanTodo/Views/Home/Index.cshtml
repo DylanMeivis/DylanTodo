@@ -20,9 +20,9 @@
       </div>
     </div>
     <div class="collapse mt-3" id="collapseAddTodo">
-      <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-      </div>
+      <form asp-asp-controller="Home" asp-action="AddTodo" method="post">
+          <input class="inputname" type="text" placeholder="Remember what?" asp-for="newTodo"/>
+      </form>
     </div>
     <div class="collapse mt-3" id="collapseMenu">
       <div class="card card-body">

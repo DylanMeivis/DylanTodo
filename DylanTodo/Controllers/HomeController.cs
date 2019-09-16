@@ -11,15 +11,23 @@ namespace DylanTodo.Controllers
 {
     public class HomeController : Controller
     {
+        private TodoList _todoList;
         public IActionResult Index()
         {
             if (!HttpContext.Request.Cookies.ContainsKey("userinfo"))
             {
-                return RedirectToAction("Index", "Introduction", new { area = ""});
+                return RedirectToAction("Index", "Introduction", new { area = "" });
             }
             var jsonString = HttpContext.Request.Cookies["userinfo"];
-            var model = Newtonsoft.Json.JsonConvert.DeserializeObject<TodoList>(HttpContext.Request.Cookies["userinfo"]);
-            return View(model);
+            _todoList = Newtonsoft.Json.JsonConvert.DeserializeObject<TodoList>(HttpContext.Request.Cookies["userinfo"]);
+            return View(_todoList);
+        }
+        [HttpPost]
+        public IActionResult AddTodo(TodoList e)
+        {
+            var newTodo = new TodoItem(e.newTodo);
+            _todoList.AllItems.Add(newTodo);
+            return RedirectToAction("Index", "Home", new { area = "" });
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

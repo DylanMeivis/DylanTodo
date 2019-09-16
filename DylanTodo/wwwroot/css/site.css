@@ -16,6 +16,11 @@
 .ColorRed {
   color: red;
 }
+.text-white a:link {
+  color: white;
+  text-decoration: none;
+  font-size: 3rem;
+}
 #menu {
     color: white;
 }
