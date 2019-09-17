@@ -2,7 +2,7 @@
 @model TodoList 
 @{ ViewData["Title"] = "HomePage"; }
 
-<div class="bg-secondary">
+<div class="TodoHolder">
   <div class="container topmenu">
     <div class="row text-cente">
       <div class="col-2">
@@ -13,15 +13,15 @@
         </button>
       </div>
       <div class="col-8 text-center">
-        <h1 id="daymessage" class="text-white">Hello @(Model.User.UserName)</h1>
+        <h1 id="daymessage">Hello @(Model.User.UserName)</h1>
       </div>
       <div class="col-2 text-white">
-        <h1><a data-toggle="collapse" href="#collapseAddTodo" aria-expanded="false" aria-controls="collapseAddTodo">&#43;</a></h1>
+        <h1 id="plusicon"><a data-toggle="collapse" href="#collapseAddTodo" aria-expanded="false" aria-controls="collapseAddTodo">&#43;</a></h1>
       </div>
     </div>
     <div class="collapse mt-3" id="collapseAddTodo">
-      <form asp-asp-controller="Home" asp-action="AddTodo" method="post">
-          <input class="inputname" type="text" placeholder="Remember what?" asp-for="newTodo"/>
+      <form asp-controller="Home" asp-action="AddTodo" method="post">
+          <input class="inputname" type="text" placeholder="Remember what?" asp-for="@Model.newTodo.Description"/>
       </form>
     </div>
     <div class="collapse mt-3" id="collapseMenu">
@@ -30,19 +30,25 @@
       </div>
     </div>
   </div>
-  <div class="container bg-secondary">
-    <div id="todoholder" class="container">
-      <div class="row py-3 text-center">
-        <div class="col-2">
-          <button class="checkboxbtn"><span id="checksign">C</span></button>
-        </div>
-        <div class="col-8 descriptionholder">
-          <input
-            class="descriptioninput form-control"
-            type="text"
-            value="Get butter"
-          />
-        </div>
+  <div class="container TodoHolder pb-2 overflow-auto">
+        @foreach (var todo in Model.AllItems)
+        {
+    <div id="todoholder" class="container my-3">
+        <div class="row py-3 text-center">
+          <div class="col-2">
+            <button class="checkboxbtn"><span id="checksign">C</span></button>
+          </div>
+          <div class="col-8 descriptionholder">
+            <form asp-controller="Home" asp-action="UpdateTodo" method="post">
+              <input
+              class="descriptioninput form-control"
+              type="text"
+              value="@todo.Description"
+              asp-for="newTodo.Description"
+            />
+            <input hidden value="@todo.Id" asp-for="newTodo.Id"/>
+            </form>
+          </div>
         <div class="col-2">
           <button
             type="button"
@@ -55,6 +61,7 @@
         </div>
       </div>
     </div>
+        }
   </div>
 </div>
 <script>
@@ -65,5 +72,10 @@
     // Toggle class "is-active"
     hamburger.classList.toggle("is-active");
     // Do something else, like open/close menu
+  });
+  var plusicon = document.querySelector('#plusicon');
+    
+  plusicon.addEventListener("click", function() {
+    plusicon.classList.toggle("is-active");
   });
 </script>

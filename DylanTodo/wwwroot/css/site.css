@@ -1,28 +1,32 @@
-﻿.ColorBlue {
+﻿:root {
+  --primary-color: #ffffff;
+  --secondary-color: #ECEFF4;
+  --font-color: #4c566a;
+  --bg-color: #f2f4f8;
+  --heading-color: #434c5e;
+  --gradient1: #e2ebf0;
+  --gradient2: #cfd9df;
+}
+[data-theme="dark"] {
+  --primary-color: ;
+  --secondary-color: ;
+  --font-color: ;
+  --bg-color: ;
+  --heading-color: ;
+  --gradient1: #1E3B70;
+  --gradient2: #29539B;
+}
+.ColorBlue {
   color: #465e73;
 }
-.ColorSkin {
-  color: #f2cdac;
-}
-.ColorDarkSkin {
-  color: #f2c299;
-}
-.ColorLips {
-  color: #f2a88c;
-}
-.ColorBrown {
-  color: #bf948a;
-}
-.ColorRed {
-  color: red;
-}
 .text-white a:link {
-  color: white;
+  color: var(--heading-color);
   text-decoration: none;
   font-size: 3rem;
+  transition: 3s;
 }
 #menu {
-    color: white;
+    color: var(--heading-color);
 }
 #menu:focus {
     outline: none;
@@ -35,7 +39,7 @@
   font-size: 1rem;
   padding: 1rem 2rem;
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
-  color: #465e73;
+  color: var(--font-color);
 }
 .inputname:focus {
   outline: none;
@@ -57,13 +61,21 @@
   transform: scale(1.1);
   transition: 0.5s;
 }
+#plusicon :active{
+  transform: rotate(45deg);
+  transition: 3s;
+}
 #daymessage {
   font-weight: 300;
+  color: var(--heading-color);
 }
 #todoholder {
-  background-color: whitesmoke;
+  background-color: var(--primary-color);
   border-radius: 0.625rem;
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+.TodoHolder {
+  background-color: var(--secondary-color);
 }
 .descriptionholder {
   font-size: 1.2rem;
@@ -71,7 +83,7 @@
 }
 .descriptioninput {
   border: 0;
-  background-color: whitesmoke;
+  background-color: var(--primary-color);
   color: #465e73;
   font-size: 1.5rem;
   font-weight: 200;
@@ -79,7 +91,7 @@
 .descriptioninput:focus {
   border-color: #465e73;
   box-shadow: none;
-  background-color: whitesmoke;
+  background-color: var(--primary-color);
 }
 .close:focus {
   box-shadow: none;
@@ -89,7 +101,7 @@
   height: 2rem;
   position: relative;
   display: inline-block;
-  background-color: whitesmoke;
+  background-color: var(--primary-color);
   border-radius: 0.25rem;
   cursor: pointer;
   margin-top: 0.7rem;
@@ -107,8 +119,8 @@
   border-radius: 0 0 2rem 2rem;
   background: linear-gradient(
     90deg,
-    rgba(97, 172, 217, 1) 0%,
-    rgba(54, 94, 188, 1) 100%
+    var(--gradient1) 0%,
+    var(--gradient2) 100%
   );
   padding: 3rem;
   margin-bottom: 2rem;
@@ -148,7 +160,7 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   /* font-family: poppins; */
-  background-color: #eee;
+  background-color: var(--bg-color);
   font-family: "Poppins", sans-serif;
 }
 
@@ -187,7 +199,7 @@ body {
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: white;
+  background-color: var(--heading-color);
 }
 
 .hamburger-box {
@@ -207,7 +219,7 @@ body {
 .hamburger-inner::after {
   width: 40px;
   height: 4px;
-  background-color: white;
+  background-color: var(--heading-color);
   border-radius: 4px;
   position: absolute;
   transition-property: transform;

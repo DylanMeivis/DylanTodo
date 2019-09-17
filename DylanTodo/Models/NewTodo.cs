@@ -7,6 +7,7 @@ namespace DylanTodo.Models
     {
         [Required]
         public string Description {get; set;}
+        public Guid Id { get; set;}
         public NewTodo()
         {
 
