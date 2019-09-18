@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNetCore.Http; 
+﻿@using Microsoft.AspNetCore.Http;
 @model TodoList 
 @{ ViewData["Title"] = "HomePage"; }
 
@@ -6,49 +6,84 @@
   <div class="container topmenu">
     <div class="row text-cente">
       <div class="col-2">
-        <button id="menu" class="hamburger hamburger--collapse" type="button" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu">
+        <button
+          id="menu"
+          class="hamburger hamburger--collapse"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapseMenu"
+          aria-expanded="false"
+          aria-controls="collapseMenu"
+        >
           <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
+            <span class="hamburger-inner"></span>
           </span>
         </button>
       </div>
       <div class="col-8 text-center">
         <h1 id="daymessage">Hello @(Model.User.UserName)</h1>
       </div>
-      <div class="col-2 text-white">
-        <h1 id="plusicon"><a data-toggle="collapse" href="#collapseAddTodo" aria-expanded="false" aria-controls="collapseAddTodo">&#43;</a></h1>
+      <div class="col-2">
+        <h1 id="plusicon">
+          <a
+            data-toggle="collapse"
+            href="#collapseAddTodo"
+            aria-expanded="false"
+            aria-controls="collapseAddTodo"
+            >&#43;</a
+          >
+        </h1>
       </div>
     </div>
     <div class="collapse mt-3" id="collapseAddTodo">
       <form asp-controller="Home" asp-action="AddTodo" method="post">
-          <input class="inputname" type="text" placeholder="Remember what?" asp-for="@Model.newTodo.Description"/>
+        <input
+          class="inputname"
+          type="text"
+          placeholder="Remember what?"
+          asp-for="@Model.newTodo.Description"
+        />
       </form>
     </div>
     <div class="collapse mt-3" id="collapseMenu">
-      <div class="card card-body">
-        Hallo ik ben het menu 
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="menucontainer p-5">
+            <h4>Open</h4>
+            <h1>@(Model.AllItems.Where(x => x.IsCompleted == false).Count())</h1>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="menucontainer p-5">
+            <h4>Completed</h4>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="menucontainer p-5">
+            <h1>Hello</h1>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="container TodoHolder pb-2 overflow-auto">
-        @foreach (var todo in Model.AllItems)
-        {
+    @foreach (var todo in Model.AllItems) {
     <div id="todoholder" class="container my-3">
-        <div class="row py-3 text-center">
-          <div class="col-2">
-            <button class="checkboxbtn"><span id="checksign">C</span></button>
-          </div>
-          <div class="col-8 descriptionholder">
-            <form asp-controller="Home" asp-action="UpdateTodo" method="post">
-              <input
+      <div class="row py-3 text-center">
+        <div class="col-2">
+          <h1>&#9989;</h1>
+        </div>
+        <div class="col-8 descriptionholder">
+          <form asp-controller="Home" asp-action="UpdateTodo" method="post">
+            <input
               class="descriptioninput form-control"
               type="text"
               value="@todo.Description"
               asp-for="newTodo.Description"
             />
-            <input hidden value="@todo.Id" asp-for="newTodo.Id"/>
-            </form>
-          </div>
+            <input hidden value="@todo.Id" asp-for="newTodo.Id" />
+          </form>
+        </div>
         <div class="col-2">
           <button
             type="button"
@@ -61,7 +96,14 @@
         </div>
       </div>
     </div>
-        }
+    }
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+      </label>
+      <em>Enable Dark Mode!</em>
+    </div>
   </div>
 </div>
 <script>
@@ -73,9 +115,30 @@
     hamburger.classList.toggle("is-active");
     // Do something else, like open/close menu
   });
-  var plusicon = document.querySelector('#plusicon');
-    
-  plusicon.addEventListener("click", function() {
-    plusicon.classList.toggle("is-active");
-  });
+</script>
+<script>
+  const toggleSwitch = document.querySelector(
+    '.theme-switch input[type="checkbox"]'
+  );
+  const currentTheme = localStorage.getItem("theme");
+
+  if (currentTheme) {
+    document.documentElement.setAttribute("data-theme", currentTheme);
+
+    if (currentTheme === "dark") {
+      toggleSwitch.checked = true;
+    }
+  }
+
+  function switchTheme(e) {
+    if (e.target.checked) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  toggleSwitch.addEventListener("change", switchTheme, false);
 </script>
