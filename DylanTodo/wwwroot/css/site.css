@@ -35,6 +35,7 @@
   background-color: var(--primary-color);
   text-align: center;
   color: var(--font-color);
+  border-radius: 1rem; 
 }
 #plusicon {
   color: var(--font-color);
