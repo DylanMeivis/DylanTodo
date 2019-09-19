@@ -60,7 +60,7 @@
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="menucontainer container p-4">
+          <div id="theme-switcher" class="menucontainer container p-4">
             <h4 id="menu-theme">Dark</h4>
             <h1 class="pt-2" id="menu-theme-icon">☀️</h1>
           </div>
@@ -99,58 +99,5 @@
       </div>
     </div>
     }
-    <div class="theme-switch-wrapper">
-      <label class="theme-switch" for="checkbox">
-        <input type="checkbox" id="checkbox" />
-        <div class="slider round"></div>
-      </label>
-      <em>Enable Dark Mode!</em>
-    </div>
   </div>
 </div>
-<script>
-  // Look for .hamburger
-  var hamburger = document.querySelector(".hamburger");
-  // On click
-  hamburger.addEventListener("click", function() {
-    // Toggle class "is-active"
-    hamburger.classList.toggle("is-active");
-    // Do something else, like open/close menu
-  });
-</script>
-<script>
-  const toggleSwitch = document.querySelector(
-    '.theme-switch input[type="checkbox"]'
-  );
-  const currentTheme = localStorage.getItem("theme");
-
-  if (currentTheme) {
-    document.documentElement.setAttribute("data-theme", currentTheme);
-
-    if (currentTheme === "dark") {
-      toggleSwitch.checked = true;
-      document.getElementById("menu-theme").innerHTML = "Dark";
-      document.getElementById("menu-theme-icon").innerHTML = "🌑";
-    }
-    else {
-      document.getElementById("menu-theme").innerHTML = "Light";
-      document.getElementById("menu-theme-icon").innerHTML = "🌕";
-    }
-  }
-
-  function switchTheme(e) {
-    if (e.target.checked) {
-      document.documentElement.setAttribute("data-theme", "dark");
-      document.getElementById("menu-theme").innerHTML = "Dark";
-      document.getElementById("menu-theme-icon").innerHTML = "🌑";
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.setAttribute("data-theme", "light");
-      document.getElementById("menu-theme").innerHTML = "Light";
-      document.getElementById("menu-theme-icon").innerHTML = "🌕";
-      localStorage.setItem("theme", "light");
-    }
-  }
-
-  toggleSwitch.addEventListener("change", switchTheme, false);
-</script>

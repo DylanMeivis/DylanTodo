@@ -37,9 +37,15 @@
   color: var(--font-color);
   border-radius: 1rem; 
 }
+#theme-switcher {
+  cursor: pointer;
+}
 #plusicon {
   color: var(--font-color);
   text-align: right;
+}
+#plusicon:hover {
+  opacity: 0.7;
 }
 .inputname {
   width: 100%;
