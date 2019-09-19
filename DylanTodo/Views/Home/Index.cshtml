@@ -50,17 +50,19 @@
         <div class="col-sm-4">
           <div class="menucontainer container p-4">
             <h4>Open</h4>
-            <h1>@(Model.AllItems.Where(x => x.IsCompleted == false).Count())</h1>
+            <h1 class="pt-2">@(Model.AllItems.Where(x => x.IsCompleted == false).Count())</h1>
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="menucontainer container p-5">
-            <h4>Completed</h4>
+          <div class="menucontainer container p-4">
+            <h4>Done</h4>
+            <h1 class="pt-2">@(Model.AllItems.Where(x => x.IsCompleted == true).Count())</h1>
           </div>
         </div>
         <div class="col-sm-4">
-          <div class="menucontainer p-5">
-            <h1>Hello</h1>
+          <div class="menucontainer container p-4">
+            <h4 id="menu-theme">Dark</h4>
+            <h1 class="pt-2" id="menu-theme-icon">☀️</h1>
           </div>
         </div>
       </div>
@@ -127,15 +129,25 @@
 
     if (currentTheme === "dark") {
       toggleSwitch.checked = true;
+      document.getElementById("menu-theme").innerHTML = "Dark";
+      document.getElementById("menu-theme-icon").innerHTML = "🌑";
+    }
+    else {
+      document.getElementById("menu-theme").innerHTML = "Light";
+      document.getElementById("menu-theme-icon").innerHTML = "🌕";
     }
   }
 
   function switchTheme(e) {
     if (e.target.checked) {
       document.documentElement.setAttribute("data-theme", "dark");
+      document.getElementById("menu-theme").innerHTML = "Dark";
+      document.getElementById("menu-theme-icon").innerHTML = "🌑";
       localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.setAttribute("data-theme", "light");
+      document.getElementById("menu-theme").innerHTML = "Light";
+      document.getElementById("menu-theme-icon").innerHTML = "🌕";
       localStorage.setItem("theme", "light");
     }
   }
