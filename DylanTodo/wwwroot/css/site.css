@@ -6,6 +6,7 @@
   --heading-color: #434c5e;
   --gradient1: #e2ebf0;
   --gradient2: #cfd9df;
+  --footer-color: #dee2e6;
 }
 [data-theme="dark"] {
   --primary-color: #4C566A;
@@ -15,6 +16,7 @@
   --heading-color: #eceff4;
   --gradient1: #1E3B70;
   --gradient2: #29539B;
+  --footer-color: #2e3440 ;
 }
 .ColorBlue {
   color: #465e73;
@@ -186,6 +188,7 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
+  border-top: 1px solid var(--footer-color);
 }
 
 /* Hamburger menu */
