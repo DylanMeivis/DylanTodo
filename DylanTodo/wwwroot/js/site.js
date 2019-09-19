@@ -34,6 +34,35 @@ document.getElementById("theme-switcher").addEventListener("click", function() {
         hello = "dark";
     }
 });
+let darklight = document.getElementById("theme-switcher");
+let menuTheme = document.getElementById("menu-theme");
+let menuThemeIcon = document.getElementById("menu-theme-icon");
+
+darklight.addEventListener("mouseenter", function( event ) {   
+    if (hello === "dark") {
+        document.getElementById("menu-theme").innerHTML = "Light";
+        document.getElementById("menu-theme-icon").innerHTML = "🌕";
+        event.target.style.backgroundColor = '#eceff4';
+        event.target.style.color = '#4c566a';
+    }
+    else {
+        document.getElementById("menu-theme").innerHTML = "Dark";
+        document.getElementById("menu-theme-icon").innerHTML = "🌑";
+        event.target.style.backgroundColor = '#2e3440';
+        event.target.style.color = '#eceff4';
+    }
+  }, false);
+  darklight.addEventListener("mouseleave", function( event ) {   
+    if (hello === "dark") {
+        document.getElementById("menu-theme").innerHTML = "Dark";
+        document.getElementById("menu-theme-icon").innerHTML = "🌑";
+    }
+    else {
+        document.getElementById("menu-theme").innerHTML = "Light";
+        document.getElementById("menu-theme-icon").innerHTML = "🌕";
+    }
+    event.target.removeAttribute("style");
+  }, false);
 // --------------------
 
 // Hamburger JS Code below 

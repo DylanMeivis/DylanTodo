@@ -72,8 +72,8 @@
     @foreach (var todo in Model.AllItems) {
     <div id="todoholder" class="container my-3">
       <div class="row py-3 text-center">
-        <div class="col-2">
-          <h1>&#9989;</h1>
+        <div class="col-2" id="checkboxholder">
+          <span class="checkicon">&#9989;</span>
         </div>
         <div class="col-8 descriptionholder">
           <form asp-controller="Home" asp-action="UpdateTodo" method="post">

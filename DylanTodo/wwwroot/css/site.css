@@ -129,6 +129,21 @@
   border: 0.0625rem solid #465e73;
   border-radius: 5rem;
 }
+#checkboxholder .checkicon {
+  visibility: hidden;
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#checkboxholder:hover .checkicon {
+  visibility: visible;
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.checkicon {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 0.4rem;
+  font-size: 2rem;
+}
 .checkboxbtn:hover {
   background-color: aquamarine;
 }
