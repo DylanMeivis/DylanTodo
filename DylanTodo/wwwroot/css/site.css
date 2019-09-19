@@ -4,8 +4,8 @@
   --font-color: #4c566a;
   --bg-color: #f2f4f8;
   --heading-color: #434c5e;
-  --gradient1: #e2ebf0;
-  --gradient2: #cfd9df;
+  --gradient1: #6991c7;
+  --gradient2: #a3bded;
   --footer-color: #dee2e6;
 }
 [data-theme="dark"] {
@@ -14,8 +14,8 @@
   --font-color: #eceff4;
   --bg-color: #242933;
   --heading-color: #eceff4;
-  --gradient1: #1E3B70;
-  --gradient2: #29539B;
+  --gradient1: #7579ff;
+  --gradient2: #b224ef;
   --footer-color: #2e3440 ;
 }
 .ColorBlue {
@@ -34,7 +34,7 @@
     box-shadow: none;
 }
 .menucontainer {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   text-align: center;
   color: var(--font-color);
   border-radius: 1rem; 
@@ -88,9 +88,15 @@
   background-color: var(--primary-color);
   border-radius: 0.625rem;
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  border-left: 1.875rem solid var(--gradient1);
 }
 .TodoHolder {
   background-color: var(--secondary-color);
+  border-radius: 1.25rem;
+}
+#mainappbg {
+  background-color: var(--secondary-color);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
 }
 .descriptionholder {
   font-size: 1.2rem;
